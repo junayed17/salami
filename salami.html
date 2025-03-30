@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Salami Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('salami.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 12px;
+            border: none;
+            background: #ffcc00;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffdd44;
+        }
+
+        .alert {
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .alert p {
+            background: green;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 22px;
+        } 
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Enter Your Salami Details 🎁</h2>
+        <input type="text" id="name" placeholder="আপনার নাম">
+        <select id="method">
+            <option value="Bkash">Bkash</option>
+            <option value="Nagad">Nagad</option>
+        </select>
+        <input type="tel" id="phone" placeholder="আপনার মোবাইল নাম্বার">
+        <input type="number" id="amount" placeholder="পরিমাণ (৳)">
+        <button onclick="submitSalami()">Confirm</button>
+    </div>
+
+    <div class="alert" id="alertBox">
+        <p id="alertText"></p>
+    </div>
+
+    <script>
+        function submitSalami() {
+            let name = document.getElementById('name').value;
+            let method = document.getElementById('method').value;
+            let phone = document.getElementById('phone').value;
+            let amount = document.getElementById('amount').value;
+
+            if (name === '' || phone === '' || amount === '') {
+                alert('সব ফিল্ড পূরণ করুন!');
+                return;
+            }
+
+            let alertBox = document.getElementById('alertBox');
+            let alertText = document.getElementById('alertText');
+
+            alertText.innerHTML = `জুয়ানায়েদ ভাই পক্ষ থেকে \n✅ <strong>${name}</strong>, আপনার <strong>${method}</strong> একাউন্ট (<strong>${phone}</strong>)-এ <strong>${amount}৳</strong>টাকা সেলামি পাঠানো হয়েছে! ধন্যবাদ 💸`;
+
+            alertBox.style.visibility = 'visible';
+            alertBox.style.opacity="1";
+
+            // setTimeout(() => {
+            //     alertBox.style.visibility = 'hidden';
+            //     alertBox.style.opacity = "0";
+            //     location.reload();
+            // }, 10000);
+        }
+    </script>
+
+</body>
+
+</html>

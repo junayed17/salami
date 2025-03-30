@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Salami</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('salami.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .salami-btn {
+            display: inline-block;
+            /* Now it respects width & height */
+            width: 200px;
+            height: 50px;
+            background: url("images.jpg") no-repeat center center/cover;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            /* Centers text vertically */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #ffcc00;
+        }
+
+        .salami-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Take all the salami you want! 🥳🎉</h1>
+        <a href="salami.html" class="salami-btn">Get Salami</a>
+    </div>
+
+</body>
+
+</html>
